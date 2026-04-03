@@ -1,0 +1,47 @@
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class SolutionTest {
+
+    private final Solution solution = new Solution();
+
+    @Test
+    void testCasoBasico() {
+        assertArrayEquals(new int[]{0, 1}, solution.twoSum(new int[]{2, 7, 11, 15}, 9));
+    }
+
+    @Test
+    void testElementosAlFinal() {
+        assertArrayEquals(new int[]{1, 2}, solution.twoSum(new int[]{3, 2, 4}, 6));
+    }
+
+    @Test
+    void testMismoElementoRepetido() {
+        assertArrayEquals(new int[]{0, 1}, solution.twoSum(new int[]{3, 3}, 6));
+    }
+
+    @Test
+    void testNumerosNegativos() {
+        assertArrayEquals(new int[]{0, 2}, solution.twoSum(new int[]{-3, 4, 3}, 0));
+    }
+
+    @Test
+    void testTargetNegativo() {
+        assertArrayEquals(new int[]{0, 1}, solution.twoSum(new int[]{-5, -3, 1}, -8));
+    }
+
+    @Test
+    void testConCeros() {
+        assertArrayEquals(new int[]{0, 1}, solution.twoSum(new int[]{0, 0, 5}, 0));
+    }
+
+    @Test
+    void testArrayGrande() {
+        assertArrayEquals(new int[]{0, 4}, solution.twoSum(new int[]{1, 5, 8, 3, 9}, 10));
+    }
+
+    @Test
+    void testSinSolucion() {
+        assertArrayEquals(new int[]{}, solution.twoSum(new int[]{1, 2, 3}, 100));
+    }
+}
